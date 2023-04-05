@@ -10,20 +10,34 @@ public class Properties {
 	private String address;
 	private Integer userId;
 	private String url;
+	private String phone;
 	
+	
+
 	@Id
 	@GeneratedValue
 	private Integer id;
 	
+	Properties(){};
+	
 	
 
-	public Properties(String name, String address, Integer userId, String url, Integer id) {
+	public Properties(String name, String address, Integer userId, String url, String phone, Integer id) {
 		super();
 		this.name = name;
 		this.address = address;
 		this.userId = userId;
 		this.url = url;
+		this.phone = phone;
 		this.id = id;
+	}
+	
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getName() {
@@ -68,8 +82,11 @@ public class Properties {
 
 	@Override
 	public String toString() {
-		return "Properties [name=" + name + ", address=" + address + ", userId=" + userId + ", url=" + url + ", id="
-				+ id + "]";
+		return "Properties [name=" + name + ", address=" + address + ", userId=" + userId + ", url=" + url + ", phone="
+				+ phone + ", id=" + id + "]";
 	}
+
+	
+	
 	
 }
