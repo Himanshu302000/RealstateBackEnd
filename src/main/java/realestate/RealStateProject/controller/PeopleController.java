@@ -4,8 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import realestate.RealStateProject.people.People;
@@ -23,4 +27,19 @@ public class PeopleController {
 		List<People> data = repository.findAll();
 		return data;
 	}
+	
+	@PostMapping("/post")
+	public People  putData(@RequestBody People people)
+	{
+		 return repository.save(people);
+	}
+	
+	@GetMapping("/getById/{id}")
+	public People getDataById(@PathVariable Integer id)
+	{
+		People people=repository.findById(id).get();
+		return people;
+	}
+	
+	
 }
