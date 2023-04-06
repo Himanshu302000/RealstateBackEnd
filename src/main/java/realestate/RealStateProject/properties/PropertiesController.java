@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -44,4 +45,19 @@ public class PropertiesController {
 		return repository.findByUserId(id);
 		
 	}
+	
+	@PutMapping("/updateProperty")
+	public Properties updateProperty(@RequestBody Properties property)
+	{
+		return repository.save(property);
+	}
+	
+	/*
+	 @PutMapping("/jpa/users/{username}/todos/{id}")
+		public ResponseEntity<Todo> updateTodo(@PathVariable String username,@PathVariable int id,@RequestBody Todo todo)
+		{
+			todoJpaRepository.save(todo);
+			
+			return new ResponseEntity<Todo>(todo,HttpStatus.OK);
+		} */
 }
