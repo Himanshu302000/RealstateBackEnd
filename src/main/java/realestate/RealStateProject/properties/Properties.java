@@ -13,6 +13,7 @@ public class Properties {
 	private String phone;
 	private String furnished;
 	private String description;
+	private Integer likes;
 	
 	
 
@@ -24,7 +25,7 @@ public class Properties {
 	
 	
 
-	public Properties(String name, String address, Integer userId, String url, String phone, Integer id,String furnished,String description) {
+	public Properties(String name, String address, Integer userId, String url, String phone, Integer id,String furnished,String description,Integer likes) {
 		super();
 		this.name = name;
 		this.address = address;
@@ -34,6 +35,7 @@ public class Properties {
 		this.id = id;
 		this.furnished=furnished;
 		this.description=description;
+		this.likes=likes;
 	}
 	
 	public String getPhone() {
@@ -107,13 +109,30 @@ public class Properties {
 		this.description = description;
 	}
 
+	
+
+	public Integer getLikes() {
+		return likes;
+	}
+
+
+
+	public void setLikes(Integer likes) {
+		this.likes = likes;
+	}
+
 
 
 	@Override
 	public String toString() {
 		return "Properties [name=" + name + ", address=" + address + ", userId=" + userId + ", url=" + url + ", phone="
-				+ phone + ", furnished=" + furnished + ", description=" + description + ", id=" + id + "]";
+				+ phone + ", furnished=" + furnished + ", description=" + description + ", likes=" + likes + ", id="
+				+ id + "]"; 
 	}
+
+
+
+	
 
 
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,12 +53,16 @@ public class PropertiesController {
 		return repository.save(property);
 	}
 	
-	/*
-	 @PutMapping("/jpa/users/{username}/todos/{id}")
-		public ResponseEntity<Todo> updateTodo(@PathVariable String username,@PathVariable int id,@RequestBody Todo todo)
-		{
-			todoJpaRepository.save(todo);
-			
-			return new ResponseEntity<Todo>(todo,HttpStatus.OK);
-		} */
+	@DeleteMapping("/deleteProperty/{id}")
+	public void deleteProperties(@PathVariable Integer id)
+	{
+		 repository.deleteById(id);
+	}
+	
+	/*@DeleteMapping("/jpa/users/{username}/todos/{id}")
+		public ResponseEntity<Void> deleteTodo(@PathVariable String username,@PathVariable int id)
+		{		
+			 todoJpaRepository.deleteById(id);
+			 return ResponseEntity.noContent().build();
+	}*/
 }
