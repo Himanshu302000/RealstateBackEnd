@@ -1,5 +1,7 @@
 package realestate.RealStateProject.properties;
 
+import java.util.Arrays;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -16,6 +18,10 @@ public class Properties {
 	private Integer likes;
 	
 	
+
+	
+
+
 
 	@Id
 	@GeneratedValue
@@ -126,9 +132,12 @@ public class Properties {
 	@Override
 	public String toString() {
 		return "Properties [name=" + name + ", address=" + address + ", userId=" + userId + ", url=" + url + ", phone="
-				+ phone + ", furnished=" + furnished + ", description=" + description + ", likes=" + likes + ", id="
-				+ id + "]"; 
+				+ phone + ", furnished=" + furnished + ", description=" + description + ", likes=" + likes +  ", id=" + id + "]";
 	}
+
+
+
+	
 
 
 
